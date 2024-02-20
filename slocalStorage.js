@@ -12,31 +12,21 @@ sLocalStorage 来自 Ruize Sun
 */
 
 class sLocalStorage {
-	constructor(runtime) {
-		this.runtime = runtime;
-	}
-
 	getInfo() {
 		return {
 			id: "sLocalStorage",
 			name: "本地存储",
 			blocks: [
 				{
-					opcode: "warns",
-					blockType: Scratch.BlockType.COMMAND,
-					text: "【重要】第一次使用请先点我获取须注意的事项！",
-					arguments: {},
+					func: 'warns',
+					blockType: Scratch.BlockType.BUTTON,
+					text: "注意事项",
 				},
-				{
-					opcode: "unSupportCompile",
-					blockType: "label",
-					text: "————————————————————",
-					arguments: {},
-				},
+				'---',
 				{
 					opcode: "savelstorage",
 					blockType: Scratch.BlockType.COMMAND,
-					text: "【项目】将信息存入浏览器本地存储：{[key]:[text]}",
+					text: "项目存储 [key] 为 [text]",
 					arguments: {
 						key: {
 							type: Scratch.ArgumentType.STRING,
@@ -51,7 +41,7 @@ class sLocalStorage {
 				{
 					opcode: "getlstorage",
 					blockType: Scratch.BlockType.REPORTER,
-					text: "【项目】通过键值[key]获取浏览器本地存储的数据",
+					text: "项目存储 [key]",
 					arguments: {
 						key: {
 							type: Scratch.ArgumentType.STRING,
@@ -62,7 +52,7 @@ class sLocalStorage {
 				{
 					opcode: "rmlstorage",
 					blockType: Scratch.BlockType.COMMAND,
-					text: "【项目】删除键值[key]对应浏览器本地存储的数据",
+					text: "删除项目存储 [key]",
 					arguments: {
 						key: {
 							type: Scratch.ArgumentType.STRING,
@@ -70,16 +60,11 @@ class sLocalStorage {
 						},
 					},
 				},
-				{
-					opcode: "unSupportCompile",
-					blockType: "label",
-					text: "————————————————————",
-					arguments: {},
-				},
+				'---',
 				{
 					opcode: "savelstorageg",
 					blockType: Scratch.BlockType.COMMAND,
-					text: "【公共】将信息存入浏览器本地存储：{[key]:[text]}",
+					text: "公共存储 [key] 为 [text]",
 					arguments: {
 						key: {
 							type: Scratch.ArgumentType.STRING,
@@ -94,7 +79,7 @@ class sLocalStorage {
 				{
 					opcode: "getlstorageg",
 					blockType: Scratch.BlockType.REPORTER,
-					text: "【公共】通过键值[key]获取浏览器本地存储的数据",
+					text:  "公共存储 [key]",
 					arguments: {
 						key: {
 							type: Scratch.ArgumentType.STRING,
@@ -105,7 +90,7 @@ class sLocalStorage {
 				{
 					opcode: "rmlstorageg",
 					blockType: Scratch.BlockType.COMMAND,
-					text: "【公共】删除键值[key]对应浏览器本地存储的数据",
+					text: "公共项目存储 [key]",
 					arguments: {
 						key: {
 							type: Scratch.ArgumentType.STRING,
@@ -113,22 +98,21 @@ class sLocalStorage {
 						},
 					},
 				},
+				'---',
 				{
-					opcode: "unSupportCompile",
-					blockType: "label",
-					text: "——————(以下内容刷新后生效)",
-					arguments: {},
+					blockType: Scratch.BlockType.LABEL,
+					text: '刷新后生效'
 				},
 				{
 					opcode: "todark",
 					blockType: Scratch.BlockType.COMMAND,
-					text: "【TW本地存储】切换为黑暗模式",
+					text: "切换为黑暗模式",
 					arguments: {},
 				},
 				{
 					opcode: "tolight",
 					blockType: Scratch.BlockType.COMMAND,
-					text: "【TW本地存储】切换为明亮模式",
+					text: "切换为明亮模式",
 					arguments: {},
 				},
 			],
